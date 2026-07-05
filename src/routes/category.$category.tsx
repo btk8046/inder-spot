@@ -30,10 +30,10 @@ export const Route = createFileRoute("/category/$category")({
     const label = CATEGORIES.find((c) => c.toLowerCase() === params.category.toLowerCase()) ?? params.category;
     return {
       meta: [
-        { title: `${label} Movies — Cineflux` },
-        { name: "description", content: `Browse ${label.toLowerCase()} movies on Cineflux. Stream and discover the best titles in ${label.toLowerCase()}.` },
-        { property: "og:title", content: `${label} Movies — Cineflux` },
-        { property: "og:description", content: `Browse ${label.toLowerCase()} movies on Cineflux.` },
+        { title: `${label} Movies — BOKEP TV` },
+        { name: "description", content: `Browse ${label.toLowerCase()} movies on BOKEP TV. Stream and discover the best titles in ${label.toLowerCase()}.` },
+        { property: "og:title", content: `${label} Movies — BOKEP TV` },
+        { property: "og:description", content: `Browse ${label.toLowerCase()} movies on BOKEP TV.` },
       ],
     };
   },

@@ -10,12 +10,6 @@ export function MovieCard({ movie }: { movie: Movie }) {
       className="group block"
     >
       <div className="relative aspect-video overflow-hidden rounded-md bg-surface ring-1 ring-border/60 transition-all duration-300 group-hover:ring-primary/60 group-hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.7)] group-hover:-translate-y-1">
-        <img
-          src={movie.thumbnail_url}
-          alt={movie.title}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
         <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-90" />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <div className="grid h-12 w-12 place-items-center rounded-full bg-primary/90 text-primary-foreground shadow-lg">

@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Cineflux — Stream Movies Across Every Genre" },
-      { name: "description", content: "Browse action, comedy, drama and horror movies on Cineflux — a modern streaming experience." },
-      { property: "og:title", content: "Cineflux — Stream Movies Across Every Genre" },
-      { property: "og:description", content: "Browse action, comedy, drama and horror movies on Cineflux." },
+      { title: "BOKEP TV — Stream Movies Across Every Genre" },
+      { name: "description", content: "Browse action, comedy, drama and horror movies on BOKEP TV — a modern streaming experience." },
+      { property: "og:title", content: "BOKEP TV — Stream Movies Across Every Genre" },
+      { property: "og:description", content: "Browse action, comedy, drama and horror movies on BOKEP TV." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -92,7 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
@@ -106,6 +105,20 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '78a70478fab83198bd7ca134fdeff72a',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+        <script src="https://www.highperformanceformat.com/78a70478fab83198bd7ca134fdeff72a/invoke.js" />
       </head>
       <body>
         {children}

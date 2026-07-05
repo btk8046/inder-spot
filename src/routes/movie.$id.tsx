@@ -25,18 +25,16 @@ export const Route = createFileRoute("/movie/$id")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Movie not found — Cineflux" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Movie not found — BOKEP TV" }, { name: "robots", content: "noindex" }] };
     }
     const { movie } = loaderData;
     return {
-      meta: [
-        { title: `${movie.title} (${movie.year}) — Cineflux` },
+    meta: [
+        { title: `${movie.title} (${movie.year}) — BOKEP TV` },
         { name: "description", content: movie.description },
-        { property: "og:title", content: `${movie.title} (${movie.year}) — Cineflux` },
+        { property: "og:title", content: `${movie.title} (${movie.year}) — BOKEP TV` },
         { property: "og:description", content: movie.description },
-        { property: "og:image", content: movie.thumbnail_url },
-        { name: "twitter:image", content: movie.thumbnail_url },
-      ],
+    ],
     };
   },
   component: MovieDetail,
@@ -65,7 +63,6 @@ function MovieDetail() {
           <video
             key={movie.id}
             src={movie.video_url}
-            poster={movie.thumbnail_url}
             controls
             className="aspect-video w-full"
           />

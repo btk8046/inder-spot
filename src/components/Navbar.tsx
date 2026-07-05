@@ -50,7 +50,7 @@ export function Navbar() {
           <div className="grid h-8 w-8 place-items-center rounded-md bg-primary text-primary-foreground">
             <Film className="h-4 w-4" />
           </div>
-          <span className="font-display text-2xl tracking-wider">CINEFLUX</span>
+          <span className="font-display text-2xl tracking-wider">BOKEP TV</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -97,17 +97,12 @@ export function Navbar() {
                     onClick={() => submitSearch(r.id)}
                     className="flex w-full items-center gap-3 px-3 py-2 text-left transition-colors hover:bg-accent"
                   >
-                    <img
-                      src={r.thumbnail_url}
-                      alt=""
-                      className="h-10 w-16 shrink-0 rounded object-cover"
-                    />
-                    <div className="min-w-0">
-                      <div className="truncate text-sm font-medium">{r.title}</div>
-                      <div className="text-xs text-muted-foreground">
-                        {r.year} · {r.category}
-                      </div>
+                  <div className="min-w-0">
+                    <div className="truncate text-sm font-medium">{r.title}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {r.year} · {r.category}
                     </div>
+                  </div>
                   </button>
                 ))}
               </div>
