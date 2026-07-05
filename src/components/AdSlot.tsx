@@ -7,48 +7,37 @@ interface AdSlotProps {
   className?: string;
 }
 
-const SLOT_META: Record<Slot, { label: string; size: string; minH: string }> = {
-  AD_SLOT_HEADER: { label: "Advertisement · Leaderboard", size: "728 × 90", minH: "min-h-[70px]" },
-  AD_SLOT_MIDCONTENT: { label: "Advertisement", size: "728 × 90", minH: "min-h-[90px]" },
-  AD_SLOT_INGRID: { label: "Sponsored", size: "In-feed", minH: "min-h-full" },
+const SLOT_META: Record<Slot, { minH: string }> = {
+  AD_SLOT_HEADER: { minH: "min-h-[70px]" },
+  AD_SLOT_MIDCONTENT: { minH: "min-h-[90px]" },
+  AD_SLOT_INGRID: { minH: "min-h-full" },
 };
+
+const AD_HTML = `
+  <script>
+    atOptions = {
+      'key' : '78a70478fab83198bd7ca134fdeff72a',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script src="https://www.highperformanceformat.com/78a70478fab83198bd7ca134fdeff72a/invoke.js"></script>
+`;
 
 export function AdSlot({ slot, className }: AdSlotProps) {
   const meta = SLOT_META[slot];
-
-  const adHtml = slot !== "AD_SLOT_INGRID" ? `
-    <script>
-      atOptions = {
-        'key' : '78a70478fab83198bd7ca134fdeff72a',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-    </script>
-    <script src="https://www.highperformanceformat.com/78a70478fab83198bd7ca134fdeff72a/invoke.js"></script>
-  ` : "";
 
   return (
     <div
       data-ad-slot={slot}
       className={cn(
-        "flex w-full flex-col items-center justify-center rounded-md border border-dashed border-border/60 bg-surface/40 px-4 py-3 text-center",
+        "flex w-full flex-col items-center justify-center",
         meta.minH,
         className,
       )}
-    >
-      {slot === "AD_SLOT_INGRID" ? null : (
-        <>
-          <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground/70">
-            {meta.label}
-          </span>
-          <span className="mt-1 text-[10px] text-muted-foreground/50">
-            {slot} · {meta.size}
-          </span>
-        </>
-      )}
-      {adHtml && <div dangerouslySetInnerHTML={{ __html: adHtml }} />}
-    </div>
+      dangerouslySetInnerHTML={{ __html: slot !== "AD_SLOT_INGRID" ? AD_HTML : "" }}
+    />
   );
 }
