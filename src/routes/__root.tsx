@@ -105,20 +105,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              atOptions = {
-                'key' : '78a70478fab83198bd7ca134fdeff72a',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-              };
-            `,
-          }}
-        />
-        <script src="https://www.highperformanceformat.com/78a70478fab83198bd7ca134fdeff72a/invoke.js" />
       </head>
       <body>
         {children}
