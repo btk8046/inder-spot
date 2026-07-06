@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, Search, X, Film } from "lucide-react";
 import { CATEGORIES, searchMovies, type Movie } from "@/lib/movies";
 import { cn } from "@/lib/utils";
+import { AdSlot } from "@/components/AdSlot";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -121,8 +122,7 @@ export function Navbar() {
 
       {/* Header ad slot — separated from nav for clarity, one per page */}
       <div className="mx-auto max-w-7xl px-4 pb-2 sm:px-6">
-        {/* AD_SLOT_HEADER */}
-        <AdSlotHeader />
+        <AdSlot slot="AD_SLOT_HEADER" />
       </div>
 
       <div
@@ -162,17 +162,5 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  );
-}
-
-function AdSlotHeader() {
-  // Kept inline to avoid an extra import cycle; mirrors AdSlot styling.
-  return (
-    <div
-      data-ad-slot="AD_SLOT_HEADER"
-      className="flex min-h-[60px] w-full items-center justify-center rounded-md border border-dashed border-border/50 bg-surface/30 text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70"
-    >
-      Advertisement · AD_SLOT_HEADER · 728 × 90
-    </div>
   );
 }
