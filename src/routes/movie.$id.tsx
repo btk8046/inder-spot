@@ -3,7 +3,6 @@ import { useSuspenseQuery, queryOptions } from "@tanstack/react-query";
 import { Calendar, Tag, ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { MovieCard } from "@/components/MovieCard";
-import { AdSlot } from "@/components/AdSlot";
 import { fetchMovieById, fetchRelated } from "@/lib/movies";
 
 const movieQuery = (id: string) =>
@@ -96,10 +95,6 @@ function MovieDetail() {
           </div>
         </div>
 
-        {/* Mid-content ad — well separated from the player and related row */}
-        <div className="mt-10">
-          <AdSlot slot="AD_SLOT_MIDCONTENT" />
-        </div>
 
         {/* Related */}
         {related.length > 0 && (
